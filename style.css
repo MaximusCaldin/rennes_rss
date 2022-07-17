@@ -1,0 +1,14 @@
+body
+{
+    background-color: black;
+    color: white;
+    max-width:45em;
+    margin: 0 auto;
+    padding: 0% 3% 0% 3%;
+}
+
+
+a
+{
+    color: inherit;
+}
