@@ -2,7 +2,12 @@
 header("Content-type: text/xml; charset=utf-8");
 $API_BASE_URL = "https://metropole.rennes.fr/";
 $ITEMS_LIMIT = 20;
-$content = file_get_contents($API_BASE_URL."/articles?maxResultsByPage=".$ITEMS_LIMIT);
+
+$content = file_get_contents(
+    $API_BASE_URL."articles?maxResultsByPage=".$ITEMS_LIMIT,
+    false,
+    stream_context_create(array("ssl"=>array('cafile' => './cert.pem'))),
+);
 
 
 if(!$content) {
